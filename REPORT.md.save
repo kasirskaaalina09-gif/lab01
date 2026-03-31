@@ -1,0 +1,47 @@
+##Лабораторная работа №1
+## Цель работы
+
+Изучить основные команды операционной системы Linux, освоить работу с файловой системой, 
+научиться использовать утилиты командной строки (find, grep, wc, du, sort), 
+а также освоить процесс сборки библиотек из исходных кодов на примере библиотеки Boost.
+## Среда выполнения
+
+Операционная система: Windows 10  
+Среда выполнения: Ubuntu (WSL)  
+Терминал: Bash  
+## 1. Скачать библиотеку Boost с помощью wget
+cd ~
+wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+ls -lh boost_1_69_0.tar.gz
+<details>
+<summary>Показать вывод команды</summary>
+
+```bash
+--2026-03-31 15:14:00--  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+Resolving sourceforge.net (sourceforge.net)... 104.18.13.149, 104.18.12.149, 2606:4700::6812:c95, ...
+Connecting to sourceforge.net (sourceforge.net)|104.18.13.149|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/ [following]
+--2026-03-31 15:14:02--  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/
+Reusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/download [following]
+--2026-03-31 15:14:02--  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/download
+Reusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... 302 Found
+Location: https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?ts=gAAAAABpy-S7ycXxGhC5xXRGmovEzdsmVyPDXPybEzAI7rzm0RVRXGC4kvzp3hPFaLxw1HV_rge65U1tNwM0U3hZHxX8CxSIFw%3D%3D&use_mirror=yer&r= [following]
+--2026-03-31 15:14:03--  https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?ts=gAAAAABpy-S7ycXxGhC5xXRGmovEzdsmVyPDXPybEzAI7rzm0RVRXGC4kvzp3hPFaLxw1HV_rge65U1tNwM0U3hZHxX8CxSIFw%3D%3D&use_mirror=yer&r=
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... 104.18.12.149, 104.18.13.149, 2606:4700::6812:c95, ...
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|104.18.12.149|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://yer.dl.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?viasf=1 [following]
+--2026-03-31 15:14:04--  https://yer.dl.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?viasf=1
+Resolving yer.dl.sourceforge.net (yer.dl.sourceforge.net)... 94.20.154.18, 2a01:6480:20::5
+Connecting to yer.dl.sourceforge.net (yer.dl.sourceforge.net)|94.20.154.18|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 111710205 (107M) [application/x-gzip]
+Saving to: ‘boost_1_69_0.tar.gz.1’
+
+boost_1_69_0.tar.gz.1                          18%[=================>                                                                                ]  19.83M   387KB/s    eta 4m 2s  ^C
+
+`</details>`
