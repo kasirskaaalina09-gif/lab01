@@ -1902,13 +1902,8 @@ cd ~/boost_1_69_0
 ./bootstrap.sh
 ./b2>build_log.txt
 
-<details>
-<summary>Показать вывод команды</summary>
-
-```bash
-drwxrwxr-x 10 vboxuser vboxuser 4096 Dec  5  2018 /home/vboxuser/boost_1_69_0
-```
-</details>
+Полный вывод компиляции доступен тут:
+[build_log.txt]https://github.com/kasirskaaalina09-gif/lab01/blob/main/build_log.txt
 
 ##9 Перенос статических библиотек в boost-libs
 Команды:
@@ -2033,4 +2028,4 @@ du -h ~/boost-libs/* | sort -hr | head -n 10
 ```
 </details>
 
-j
+
