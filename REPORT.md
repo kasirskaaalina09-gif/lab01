@@ -1,4 +1,4 @@
-##Лабораторная работа №1
+###Лабораторная работа №1
 ## Цель работы
 
 Изучить основные команды операционной системы Linux, освоить работу с файловой системой, 
@@ -47,11 +47,16 @@ boost_1_69_0.tar.gz.1                          18%[=================>           
 
 </details>
 
-##Распаковка архива
+##2.Распаковка архива
+
 Команды:
+
 cd ~
+
 tar -xzf boost_1_69_0.tar.gz
+
 ls -ld ~/boost_1_69_0
+
 <details>
 <summary>Показать вывод команды ls</summary>
 
@@ -60,9 +65,12 @@ drwxrwxr-x 10 vboxuser vboxuser 4096 Dec  5  2018 /home/vboxuser/boost_1_69_0
 ```
 </details>
 
-##Подсчет количества файлов без вложенных директорий 
+##3.Подсчет количества файлов без вложенных директорий
+ 
 Команды:
+
 find ~/boost_1_69_0 -maxdepth 1 -type f | wc -l
+
 <details>
 <summary>Показать вывод команды ls</summary>
 
@@ -71,9 +79,12 @@ find ~/boost_1_69_0 -maxdepth 1 -type f | wc -l
 ```
 </details>
 
-##Подсчет количества файлов со всеми вложенными директориями
+##4.Подсчет количества файлов со всеми вложенными директориями
+
 Команды:
+
 find ~/boost_1_69_0 -type f | wc -l
+
 <details>
 <summary>Показать вывод команды ls</summary>
 
@@ -83,13 +94,19 @@ find ~/boost_1_69_0 -type f | wc -l
 </details>
 
 ##5.Подсчет файлов hpp,cpp и остальных
+
 Команды:
+
 find ~/boost_1_69_0 -type f -name "*.hpp" | wc -l
+
 find ~/boost_1_69_0 -type f -name "*.cpp" | wc -l
 
 TOTAL=$(find ~/boost_1_69_0 -type f | wc -l)
+
 HPP=$(find ~/boost_1_69_0 -type f -name "*.hpp" | wc -l)
+
 CPP=$(find ~/boost_1_69_0 -type f -name "*.cpp" | wc -l)
+
 echo $((TOTAL - HPP - CPP))
 
 <details>
@@ -103,8 +120,11 @@ echo $((TOTAL - HPP - CPP))
 </details>
 
 ##6.Полный путь до any
+
 Команды:
+
 find ~/boost_1_69_0 -name "any.hpp"
+
 <details>
 <summary>Показать вывод команды</summary>
 
@@ -123,7 +143,9 @@ find ~/boost_1_69_0 -name "any.hpp"
 </details>
 
 ##7.Файлы с boost::asio
+
 Команды:
+
 grep -Rsl "boost::asio" ~/boost_1_69_0
 
 <details>
@@ -1896,20 +1918,30 @@ grep -Rsl "boost::asio" ~/boost_1_69_0
 ```
 </details>
 
-##Компиляция Boost
+##8.Компиляция Boost
+
 Команды:
+
 cd ~/boost_1_69_0
+
 ./bootstrap.sh
+
 ./b2>build_log.txt
 
 Полный вывод компиляции доступен тут:
+
 [build_log.txt]https://github.com/kasirskaaalina09-gif/lab01/blob/main/build_log.txt
 
-##9 Перенос статических библиотек в boost-libs
+##9.Перенос статических библиотек в boost-libs
+
 Команды:
+
 mkdir -p ~/boost-libs
+
 find ~/boost_1_69_0 -name "*.a" -type f -exec cp -t ~/boost-libs {} +
+
 ls -1 ~/boost-libs | wc -l
+
 <details>
 <summary>Показать вывод команды find</summary>
 
@@ -1968,7 +2000,9 @@ drwxrwxr-x 10 vboxuser vboxuser 4096 Dec  5  2018 /home/vboxuser/boost_1_69_0
 </details>
 
 ##10.Размер каждого файла в ~/boost-libs
+
 Команды:
+
 du -h ~/boost-libs/*
 <details>
 <summary>Показать вывод команды</summary>
@@ -2009,8 +2043,10 @@ du -h ~/boost-libs/*
 ```
 </details>
 
-11.Топ 10 самых больших файлов
+##11.Топ 10 самых больших файлов
+
 Команды:
+
 du -h ~/boost-libs/* | sort -hr | head -n 10
 <details>
 <summary>Показать вывод команды</summary>
